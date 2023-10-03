@@ -5,13 +5,10 @@ import Message from "../models/messageModel.js";
 import Conversation from "../models/conversationModel.js";
 
 const app = express();
-const netlify = "https://resonant-panda-b88a8e.netlify.app";
-// const render = "https://thread-clone-backend.onrender.com";
-
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: [netlify], //http://localhost:3000
+    origin: "https://resonant-panda-b88a8e.netlify.app", //http://localhost:3000
     methods: ["GET", "POST"],
   },
 });
