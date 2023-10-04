@@ -7,7 +7,6 @@ import postRoutes from "./routes/postRoutes.js";
 import messageRoutes from "./routes/messageRoutes.js";
 import { v2 as cloudinary } from "cloudinary";
 import { app, server } from "./socket/socket.js";
-import cors from "cors";
 
 dotenv.config();
 
@@ -25,14 +24,6 @@ cloudinary.config({
 app.use(express.json({ limit: "50mb" })); // To parse JSON data in the req.body
 app.use(express.urlencoded({ extended: true })); // To parse form data in the req.body
 app.use(cookieParser());
-
-const corsOptions = {
-  origin: "https://resonant-panda-b88a8e.netlify.app", // Update this to match your React app's URL
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true, // Enable cookies and authentication headers if needed
-};
-
-app.use(cors(corsOptions));
 
 // Routes
 app.use("/api/users", userRoutes);
