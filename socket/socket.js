@@ -12,7 +12,7 @@ const io = new Server(httpServer, {
   cors: {
     origin: [
       "http://localhost:3000",
-      "https://thread-clone-backend.onrender.com",
+      "https://resonant-panda-b88a8e.netlify.app",
     ],
     methods: ["GET", "POST"],
   },
