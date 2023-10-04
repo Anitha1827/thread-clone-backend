@@ -4,7 +4,6 @@ import express from "express";
 import Message from "../models/messageModel.js";
 import Conversation from "../models/conversationModel.js";
 import cors from "cors";
-import http from "http";
 
 const app = express();
 const server = http.createServer(app);
