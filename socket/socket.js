@@ -6,9 +6,12 @@ import Conversation from "../models/conversationModel.js";
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server, {
+const io = new Server(httpServer, {
   cors: {
-    origin: "https://thread-clone-backend.onrender.com",
+    origin: [
+      "http://localhost:3000",
+      "https://thread-clone-backend.onrender.com",
+    ],
     methods: ["GET", "POST"],
   },
 });
